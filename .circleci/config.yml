@@ -1,22 +1,52 @@
 version: 2.1
-
 jobs:
   number_one:
     docker:
-      - image: cimg/base:2021.04
-
+      - image: circleci/python:3.6
     steps:
       - checkout
       - run:
-          name: "make_python_file"
-          command: touch main.py
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
       - run:
-          name: "writing_command"
-          command: print("Hello world") > main.py
-      - run:
-          name: "run file"
-          command: python main.py
+          name: "Running the file"
+          command: |
+            . venv/bin/activate
+            python3 main.py
+
 workflows:
   workflow_test:
     jobs:
       - number_one
+
+
+
+
+
+
+
+
+#version: 2.1
+
+#jobs:
+#  number_one:
+#    docker:
+#      - image: cimg/base:2021.04
+
+#    steps:
+#      - checkout
+#      - run:
+#          name: "make_python_file"
+#          command: touch main.py
+#      - run:
+#          name: "writing_command"
+#          command: print("Hello world") > main.py
+#      - run:
+#          name: "run file"
+#          command: python main.py
+#workflows:
+#  workflow_test:
+#    jobs:
+#      - number_one
