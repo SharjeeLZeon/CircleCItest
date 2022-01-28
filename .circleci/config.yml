@@ -8,12 +8,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "list"
-          command: ls
+          name: "install packages"
+          command: |
+            apt update -y \
+            apt install python -y
       - run:
-          name: "pwd"
-          command: pwd
-
+          name: "make_python_file"
+          command: touch main.py
+      - run:
+          name: "writing_command"
+          command: print("Hello world") > main.py
+      - run:
+          name: "run file"
+          command: python main.py
 workflows:
   workflow_test:
     jobs:
