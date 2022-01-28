@@ -19,7 +19,7 @@ jobs:
 workflows:
   workflow_test:
     jobs:
-      - number_one
+      - number_one:
           filters:
             branches:
               only:
