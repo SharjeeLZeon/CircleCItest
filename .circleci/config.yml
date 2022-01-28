@@ -8,10 +8,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "install packages"
-          command: |
-            apt update -y \
-            apt install python -y
+          name: "install package"
+          command: apt install python
       - run:
           name: "make_python_file"
           command: touch main.py
