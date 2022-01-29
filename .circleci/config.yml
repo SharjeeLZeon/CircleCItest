@@ -16,15 +16,15 @@ jobs:
             . venv/bin/activate
             python3 main.py
       
-        - run:
+      - run:
           name: Creating Dummy Artifacts
           command: |
             echo "my artifact file" > /tmp/artifact-1;
             mkdir /tmp/artifacts;
-        - store_artifacts:
+      - store_artifacts:
           path: /tmp/artifact-1
           destination: artifact-file
-          
+
 workflows:
   workflow_test:
     jobs:
