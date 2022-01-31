@@ -6,7 +6,6 @@ install_awscli:
 retrive_token:
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-east-2.amazonaws.com
 build_image: retrive_token
-	sudo systemctl start docker
 	docker build -t sharjeel .
 
 tag_image: build_image
