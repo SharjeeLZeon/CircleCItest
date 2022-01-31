@@ -9,14 +9,14 @@ build_image: retrive_token
 	docker build -t sharjeel .
 
 tag_image: build_image
-	docker tag sharjeel:test 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:test
+	docker tag sharjeel:latest 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
 push_image: tag_image
-	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:test
+	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
 
 deploy_ecs:
-	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:test
+	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
 
 install code_deploy:
