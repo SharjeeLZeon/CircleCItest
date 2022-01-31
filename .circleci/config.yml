@@ -9,8 +9,8 @@ jobs:
       - run:
           name: install packages
           command: |
-            make one
-            make two
+            make install_awscli
+            make push_image
 
 
 workflows:
