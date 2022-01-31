@@ -1,4 +1,4 @@
-version 2.1
+version: 2.1
 jobs:
   install_aws_cli:
     steps:
