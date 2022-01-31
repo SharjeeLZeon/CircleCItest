@@ -19,7 +19,7 @@ register_task_definition:
 
 
 deploy_ecs:
-	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
+	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef:9'
 
 
 
