@@ -1,16 +1,14 @@
 {
     "containerDefinitions": [
-        {
-            "name": "sleep",
-            "image": "busybox",
-            "cpu": 10,
-            "command": [
-                "sleep",
-                "360"
-            ],
-            "memory": 10,
-            "essential": true
-        }
+      {
+        "name": "sample-app",
+        "image": "489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest",
+        "memory": 200,
+        "cpu": 10,
+        "essential": true
+      }
     ],
-    "family": "sleep360"
-}
+
+    "family": "sharjeel_taskdef",
+    "taskRoleArn": "arn:aws:iam::489994096722:role/SharjeeLrole"
+  }

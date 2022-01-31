@@ -11,6 +11,8 @@ jobs:
           command: |
             make install_awscli
             make register_task_definition
+            make deploy_ecs
+            
 
 
 workflows:
