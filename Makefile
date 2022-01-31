@@ -1,3 +1,6 @@
+Tags := website
+
+
 SHELL := /bin/bash
 install_awscli:
 	sudo apt-get update
@@ -9,10 +12,10 @@ build_image: retrive_token
 	docker build -t sharjeel .
 
 tag_image: build_image
-	docker tag sharjeel:latest 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
+	docker tag sharjeel:${Tags} 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:${Tags}
 
 push_image: tag_image
-	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
+	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:${Tags}
 
 register_task_definition:
 	aws ecs register-task-definition --cli-input-json file://task-definition.json
