@@ -23,5 +23,5 @@ install code_deploy:
 
 pip_version:
 	sudo apt install python3 -y
-	sudo apt install pip -y
+	sudo apt-get install pip
 	pip --version
