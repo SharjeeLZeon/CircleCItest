@@ -9,9 +9,7 @@ jobs:
       - run:
           name: install packages
           command: |
-            make install_awscli
-            make push_image
-            make deploy_ecs
+            make register_task_definition
 
 
 workflows:
