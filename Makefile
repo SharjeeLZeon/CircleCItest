@@ -9,13 +9,13 @@ install_awscli:
 retrive_token:
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-east-2.amazonaws.com
 build_image: retrive_token
-	docker build -t sharjeel .
+	docker build -t sharjeel:website .
 
 tag_image: build_image
-	docker tag sharjeel:${Tags} 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:${Tags}
+	docker tag sharjeel:website 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:website
 
 push_image: tag_image
-	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:${Tags}
+	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:website
 
 register_task_definition:
 	aws ecs register-task-definition --cli-input-json file://task-definition.json
