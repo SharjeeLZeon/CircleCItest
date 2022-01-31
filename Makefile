@@ -1,3 +1,3 @@
 SHELL := /bin/bash
 install_awscli:
-	ls
+	sudo apt-get -y -qq install awscli
