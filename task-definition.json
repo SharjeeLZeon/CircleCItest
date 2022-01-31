@@ -5,7 +5,13 @@
         "image": "nginx:latest",
         "memory": 200,
         "cpu": 10,
-        "essential": true
+        "essential": true,
+        "portMappings": [
+            {
+                "containerPort": 80,
+                "hostPort": 80
+            }
+        ]
       }
     ],
 
