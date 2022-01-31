@@ -2,7 +2,7 @@
     "containerDefinitions": [
       {
         "name": "sharjeel_taskdef",
-        "image": "489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest",
+        "image": "nginx:latest",
         "memory": 200,
         "cpu": 10,
         "essential": true
