@@ -29,4 +29,6 @@ workflows:
       - push_image:
           context: AWS
       - task_def_and_deployment:
+          requires:
+            - push_image
           context: AWS
