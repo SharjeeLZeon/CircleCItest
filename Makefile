@@ -20,13 +20,3 @@ register_task_definition:
 
 deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
-
-
-
-
-#create_cluster:
-#	aws ecs create-cluster --cluster-name TestCluster
-
-#create_service:
-#	aws ecs create-service --cluster MyCluster --service-name ecs-simple-service --task-definition sleep360:2 --desired-count 1
-

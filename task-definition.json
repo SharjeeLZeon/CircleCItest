@@ -14,7 +14,6 @@
         ]
       }
     ],
-
     "family": "sharjeel_taskdef",
     "taskRoleArn": "arn:aws:iam::489994096722:role/SharjeeLrole"
   }

@@ -1,23 +1,31 @@
 version: 2.1
 jobs:
-  install_aws_cli:
+  push_image:
     docker:
       - image: cimg/base:2021.04
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: pipeline
           command: |
             make install_awscli
             make push_image
+            
+  task_def_and_deployment:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - run:
+          name: pipeline
+          command: |
             make register_task_definition
             make deploy_ecs
-            
-
+      
 
 workflows:
   workflow_test:
     jobs:
-      - install_aws_cli:
+      - push_image:
+      - task_def_and_deployment:
           context: AWS
