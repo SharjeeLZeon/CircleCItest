@@ -1,6 +1,8 @@
 version: 2.1
 jobs:
   install_aws_cli:
+    docker:
+      - image: cimg/base:2021.04
     steps:
       - run:
           command: make goalinstall_awscli
