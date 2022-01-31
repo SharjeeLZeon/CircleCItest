@@ -9,7 +9,7 @@ jobs:
       - run:
           name: install packages
           command: |
-            make install_awscli \
+            make install_awscli
             make one
 
 
