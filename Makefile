@@ -13,13 +13,14 @@ tag_image: build_image
 	docker tag sharjeel:latest 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
 push_image: tag_image
+	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:goal
 	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
 
 deploy_ecs:
-#	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
+	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 #	ecs deploy --region ${REGION} ${CLUSTER} ${FINEXIO_APP_SERVICE} --image ${FINEXIO_APP_CONTAINER} ${AWS_ECR_ACCOUNT_URL}/${FINEXIO_APP_ECR_REPO}:latest --timeout 1800 --no-deregister
-	ecs deploy --region us-east-2 sharjeelcluster sharjeelservice --image 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest --timeout 1800 --no-deregister
+#	ecs deploy --region us-east-2 sharjeelcluster sharjeelservice --image 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest --timeout 1800 --no-deregister
 
 install code_deploy:
 	pip install ecs-deploy
