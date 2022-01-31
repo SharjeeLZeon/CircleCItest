@@ -27,5 +27,6 @@ workflows:
   workflow_test:
     jobs:
       - push_image:
+          context: AWS
       - task_def_and_deployment:
           context: AWS
