@@ -21,6 +21,3 @@ deploy_ecs:
 
 install code_deploy:
 	pip install ecs-deploy
-
-pip_version:
-	pip --version
