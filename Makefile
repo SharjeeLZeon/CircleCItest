@@ -12,7 +12,7 @@ build_image: retrive_token
 tag_image: build_image
 	docker tag sharjeel:latest 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
-push_image: tag_image
+push_image: build_image
 	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:goal
 	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
