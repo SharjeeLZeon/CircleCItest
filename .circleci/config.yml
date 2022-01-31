@@ -17,4 +17,3 @@ workflows:
   workflow_test:
     jobs:
       - install_aws_cli:
-          context: AWS
