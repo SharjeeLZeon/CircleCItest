@@ -16,7 +16,7 @@ push_image: tag_image
 
 
 deploy_ecs:
-	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition sharjeel_taskdef:2
+	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition sharjeel_taskdef:3
 
 
 install code_deploy:
