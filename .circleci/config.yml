@@ -5,10 +5,12 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: install packages
           command: |
-            make install_awscli
+            make install_awscli \
+            make one
 
 
 workflows:
