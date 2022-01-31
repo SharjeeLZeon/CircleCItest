@@ -22,4 +22,4 @@ deploy_ecs:
 #	ecs deploy --region us-east-2 sharjeelcluster sharjeelservice --image 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest --timeout 1800 --no-deregister
 
 install_code_deploy:
-	sudo pip install ecs-deploy
+	pip3 install ecs-deploy
