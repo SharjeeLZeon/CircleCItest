@@ -3,4 +3,4 @@ jobs:
   install_aws_cli:
     steps:
       - run:
-          command: sudo apt install awscli
+          command: make goalinstall_awscli
