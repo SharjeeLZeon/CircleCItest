@@ -4,9 +4,10 @@ jobs:
     docker:
       - image: cimg/base:2021.04
     steps:
+      - checkout
       - run:
           command: |
-            sudo make install_awscli
+            make install_awscli
 
 
 workflows:
