@@ -16,7 +16,8 @@ push_image: tag_image
 
 
 deploy_ecs:
-	ecs deploy sharjeelcluster sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
+	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
+
 
 install code_deploy:
 	pip install ecs-deploy
