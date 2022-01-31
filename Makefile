@@ -14,5 +14,5 @@ tag_image: build_image
 push_image: tag_image
 	docker push 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
 
-#deploy_ecs:
-#	ecs deploy sharjeelcluster sharjeelservice --task  arn
+deploy_ecs:
+	ecs deploy sharjeelcluster sharjeelservice --task-definition 489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest
