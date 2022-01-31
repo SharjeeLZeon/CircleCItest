@@ -7,7 +7,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: install packages
+          name: pipeline
           command: |
             make install_awscli
             make push_image
