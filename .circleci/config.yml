@@ -5,4 +5,10 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - run:
-          command: make goalinstall_awscli
+          command: make install_awscli
+
+
+workflows:
+  workflow_test:
+    jobs:
+      - install_aws_cli
