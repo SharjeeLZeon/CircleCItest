@@ -1,99 +1,16 @@
 {
-    "ipcMode": null,
-    "executionRoleArn": "arn:aws:iam::489994096722:role/ecsTaskExecutionRole",
     "containerDefinitions": [
-      {
-        "dnsSearchDomains": null,
-        "environmentFiles": null,
-        "logConfiguration": null,
-        "entryPoint": null,
-        "portMappings": [
-          {
-            "hostPort": 80,
-            "protocol": "tcp",
-            "containerPort": 80
-          }
-        ],
-        "command": null,
-        "linuxParameters": null,
-        "cpu": 0,
-        "environment": [],
-        "resourceRequirements": null,
-        "ulimits": null,
-        "dnsServers": null,
-        "mountPoints": [],
-        "workingDirectory": null,
-        "secrets": null,
-        "dockerSecurityOptions": null,
-        "memory": 300,
-        "memoryReservation": 200,
-        "volumesFrom": [],
-        "stopTimeout": null,
-        "image": "489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:latest",
-        "startTimeout": null,
-        "firelensConfiguration": null,
-        "dependsOn": null,
-        "disableNetworking": null,
-        "interactive": null,
-        "healthCheck": null,
-        "essential": true,
-        "links": null,
-        "hostname": null,
-        "extraHosts": null,
-        "pseudoTerminal": null,
-        "user": null,
-        "readonlyRootFilesystem": null,
-        "dockerLabels": null,
-        "systemControls": null,
-        "privileged": null,
-        "name": "nginx"
-      }
+        {
+            "name": "sleep",
+            "image": "busybox",
+            "cpu": 10,
+            "command": [
+                "sleep",
+                "360"
+            ],
+            "memory": 10,
+            "essential": true
+        }
     ],
-    "placementConstraints": [],
-    "memory": null,
-    "taskRoleArn": "arn:aws:iam::489994096722:role/SharjeeLrole",
-    "compatibilities": [
-      "EXTERNAL",
-      "EC2"
-    ],
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:489994096722:task-definition/sharjeel_taskdef:4",
-    "family": "sharjeel_taskdef",
-    "requiresAttributes": [
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "com.amazonaws.ecs.capability.ecr-auth"
-      },
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
-      },
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "com.amazonaws.ecs.capability.task-iam-role"
-      },
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "ecs.capability.execution-role-ecr-pull"
-      }
-    ],
-    "pidMode": null,
-    "requiresCompatibilities": [
-      "EC2"
-    ],
-    "networkMode": "bridge",
-    "runtimePlatform": null,
-    "cpu": null,
-    "revision": 3,
-    "status": "ACTIVE",
-    "inferenceAccelerators": null,
-    "proxyConfiguration": null,
-    "volumes": []
-  }
+    "family": "sleep360"
+}
