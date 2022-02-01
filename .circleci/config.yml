@@ -9,7 +9,7 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            make pip_install
+            sudo apt install python3-pip
             
 
 
