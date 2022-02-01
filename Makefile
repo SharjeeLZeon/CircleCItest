@@ -1,4 +1,4 @@
-Tags := websitessss
+Tags := nginx
 
 
 SHELL := /bin/bash
