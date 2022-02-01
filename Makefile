@@ -5,7 +5,7 @@ install_awscli:
 	sudo apt-get update
 	sudo apt-get install awscli
 
-retrive_token:
+retrive_token: install_awscli
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-east-2.amazonaws.com
 build_image: retrive_token
 	docker build -t sharjeel:${Tags} .
@@ -22,3 +22,8 @@ register_task_definition:
 
 deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
+
+pip_install:
+	python --version
+	sudo apt install pip
+	sudo apt install python3-pip
