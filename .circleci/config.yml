@@ -9,7 +9,7 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            which python
+            make pip_install
             
 
 
