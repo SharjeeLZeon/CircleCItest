@@ -26,4 +26,5 @@ deploy_ecs:
 pip_install:
 	ls /home/circleci/project
 	ls /usr/bin
+	sudo apt install pip
 	sudo apt install python3-pip
