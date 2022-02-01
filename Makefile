@@ -24,5 +24,6 @@ deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
 
 pip_install:
-	ls
-	pwd
+	curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | sudo tee /usr/bin/ecs-deploy
+	sudo chmod +x /usr/bin/ecs-deploy
+	ecs-desploy --version
