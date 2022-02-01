@@ -2,7 +2,7 @@
     "containerDefinitions": [
       {
         "name": "nginx",
-        "image": "489994096722.dkr.ecr.us-east-2.amazonaws.com/sharjeel:nginx",
+        "image": "nginx:latest",
         "memory": 200,
         "cpu": 10,
         "essential": true,

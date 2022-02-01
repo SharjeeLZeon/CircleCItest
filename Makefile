@@ -1,6 +1,5 @@
 Tags := nginx
 
-
 SHELL := /bin/bash
 install_awscli:
 	sudo apt-get update
