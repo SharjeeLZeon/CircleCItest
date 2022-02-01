@@ -25,6 +25,5 @@ deploy_ecs:
 
 pip_install:
 	sudo apt install python3
-	python --version
-	sudo yum install pip
+	sudo apt install pip
 	sudo apt install python3-pip
