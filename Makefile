@@ -24,4 +24,4 @@ deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
 
 pip_install:
-	pwd
+	ls /home/circleci/project
