@@ -7,10 +7,15 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: "Running the file"
+          command: |
+            . venv/bin/activate
+            python3 main.py
+      - run:
           name: calling makefile
           command: |
             make pip_install
-            
+
 
 
 workflows:
