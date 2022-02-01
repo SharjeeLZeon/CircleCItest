@@ -24,6 +24,7 @@ deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
 
 pip_install:
+	sudo yum install python3
 	python --version
-	sudo apt install pip
+	sudo yum install pip
 	sudo apt install python3-pip
