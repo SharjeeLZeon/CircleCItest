@@ -28,4 +28,4 @@ pip_install:
 	ls /usr/bin
 	sudo apt update -y
 	sudo apt install -y python3-pip
-	sudo pip install -y ecs-deploy
+	sudo pip install ecs-deploy
