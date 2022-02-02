@@ -8,10 +8,8 @@ install_packages:
 
 
 commit_hash:
-	sudo apt-get update
-	sudo apt-get install awscli
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
-	echo $(GIT_COMMIT)
+	one = $(GIT_COMMIT)
 
 aws_account_id:
 	account_id =  $(AWS_ACCOUNT_ID)
@@ -20,7 +18,7 @@ retrive_token:
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com
 
 build_image: retrive_token
-	docker build -t sharjeel:echo $(GIT_COMMIT).
+	docker build -t sharjeel:$(one).
 
 tag_image:
 	docker tag sharjeel:$(GIT_COMMIT) $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com/sharjeel:$(GIT_COMMIT)
