@@ -1,9 +1,12 @@
 Tags := nginx
 
 SHELL := /bin/bash
-install_awscli:
+install_packages:
 	sudo apt-get update
 	sudo apt-get install awscli
+	sudo apt update -y
+	sudo apt install -y python3-pip
+	sudo pip install ecs-deploy
 
 retrive_token: install_awscli
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-east-2.amazonaws.com
@@ -20,12 +23,13 @@ register_task_definition:
 	aws ecs register-task-definition --cli-input-json file://task-definition.json
 
 
+
+deployment_ecs:
+	ecs deploy sharjeelcluster sharjeelservice --task arn:aws:ecs:us-east-2:489994096722:task-definition/sharjeeltask:${REVISION} --timeout 600
+
+
+
 deploy_ecs:
 	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
 
-pip_install:
-	ls /home/circleci/project
-	ls /usr/bin
-	sudo apt update -y
-	sudo apt install -y python3-pip
-	sudo pip install ecs-deploy
+
