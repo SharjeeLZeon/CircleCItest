@@ -8,10 +8,8 @@ install_packages:
 
 
 commit_hash:
-	sudo apt-get update
-	sudo apt-get install awscli
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
-	test := $(GIT_COMMIT)
+	test = $(GIT_COMMIT)
 
 aws_account_id:
 	account_id =  $(AWS_ACCOUNT_ID)
