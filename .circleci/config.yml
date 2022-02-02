@@ -9,7 +9,6 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            make commit_hash
             make build_image
             make tag_image
             make push_image
