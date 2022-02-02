@@ -9,9 +9,11 @@ jobs:
       - run:
           name: calling makefile
           command: |
+            make install_packages
             make build_image
             make tag_image
             make push_image
+            make deploy_ecs_cluster
 
 
 workflows:
