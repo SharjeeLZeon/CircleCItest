@@ -10,7 +10,8 @@ install_packages:
 commit_hash:
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
 	echo $(GIT_COMMIT)
-	echo $(AWS_ACCOUNT_ID)
+	one =  $(AWS_ACCOUNT_ID)
+	echo $(one)
 
 retrive_token:
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-east-2.amazonaws.com
