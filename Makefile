@@ -28,7 +28,7 @@ commit_hash:
 
 commit_id:
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
-	echo '$(GIT_COMMIT)
+	echo $(GIT_COMMIT)
 
 
 
