@@ -9,7 +9,7 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            make commit_id
+            make commit_hash
             
 
 
