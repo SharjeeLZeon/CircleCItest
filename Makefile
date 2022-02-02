@@ -7,7 +7,6 @@ install_awscli_packages:
 	sudo apt-get install awscli
 
 retrive_token:
-#	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
 	eval $$\( aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION}\)
 
 build_image: retrive_token
@@ -27,27 +26,3 @@ ecs_deploy_packages:
 
 deploy_ecs_cluster:
 	ecs deploy sharjeelcluster sharjeelservice --task sharjeeltaskdef
-
-
-
-
-
-
-
-
-
-
-#register_task_definition:
-#	aws ecs register-task-definition --cli-input-json file://task-definition.json
-
-
-
-#deployment_ecs:
-#	ecs deploy sharjeelcluster sharjeelservice --task arn:aws:ecs:us-east-2:489994096722:task-definition/sharjeeltask:${REVISION} --timeout 600
-
-
-
-#deploy_ecs:
-#	aws ecs update-service --cluster sharjeelcluster --service sharjeelservice --task-definition 'sharjeel_taskdef'
-
-
