@@ -10,7 +10,8 @@ install_packages:
 commit_hash:
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
 	echo $(GIT_COMMIT)
-	one =  $(AWS_ACCOUNT_ID)
+	later =  $(AWS_ACCOUNT_ID)
+	one = one ${later_variable}
 	echo $(one)
 
 retrive_token:
