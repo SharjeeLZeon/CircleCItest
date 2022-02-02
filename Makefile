@@ -8,6 +8,8 @@ install_packages:
 
 
 commit_hash:
+	sudo apt-get update
+	sudo apt-get install awscli
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
 	one = $(GIT_COMMIT)
 
