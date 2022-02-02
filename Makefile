@@ -1,14 +1,14 @@
 SHELL := /bin/bash
+
 COMMIT = $(shell git rev-parse --short HEAD)
-install_packages:
+
+install_awscli_packages:
 	sudo apt-get update
 	sudo apt-get install awscli
 
-
 retrive_token:
-	echo "hellow world"
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
-#	eval $$\( aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION}\)
+#	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
+	eval $$\( aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION}\)
 
 build_image: retrive_token
 	docker build -t sharjeel:$(COMMIT) .
