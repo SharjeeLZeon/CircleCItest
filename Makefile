@@ -9,12 +9,8 @@ install_packages:
 
 
 retrive_token:
-	sudo apt-get update
-	sudo apt-get install awscli
-	sudo apt update -y
-	sudo apt install -y python3-pip
-	sudo pip install ecs-deploy -y
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
+#	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
+	eval $$\( aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION}\)
 
 build_image: retrive_token
 	docker build -t sharjeel:$(COMMIT) .
@@ -24,8 +20,6 @@ tag_image:
 
 push_image:
 	docker push $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com/sharjeel:$(COMMIT)
-
-
 
 
 deploy_ecs_cluster:
