@@ -14,7 +14,7 @@ retrive_token:
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com
 
 build_image: retrive_token
-	docker build -t sharjeel:${COMMIT}.
+	docker build -t sharjeel:${COMMIT} .
 
 tag_image:
 	docker tag sharjeel:$(COMMIT) $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com/sharjeel:$(COMMIT)
