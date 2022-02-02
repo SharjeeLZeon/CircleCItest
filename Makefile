@@ -11,16 +11,16 @@ install_packages:
 retrive_token:
 	sudo apt-get update
 	sudo apt-get install awscli
-	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com
 
 build_image: retrive_token
-	docker build -t sharjeel:${COMMIT} .
+	docker build -t sharjeel:$(COMMIT) .
 
 tag_image:
-	docker tag sharjeel:$(COMMIT) $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com/sharjeel:$(COMMIT)
+	docker tag sharjeel:$(COMMIT) $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com/sharjeel:$(COMMIT)
 
 push_image:
-	docker push $(AWS_ACCOUNT_ID).dkr.ecr.us-east-2.amazonaws.com/sharjeel:$(COMMIT)
+	docker push $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com/sharjeel:$(COMMIT)
 
 
 
