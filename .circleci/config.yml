@@ -13,6 +13,7 @@ jobs:
             make build_image
             make tag_image
             make push_image
+            make ecs_deploy_packages
 
 
 workflows:

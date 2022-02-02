@@ -3,10 +3,6 @@ COMMIT = $(shell git rev-parse --short HEAD)
 install_packages:
 	sudo apt-get update
 	sudo apt-get install awscli
-	sudo apt update -y
-	sudo apt install -y python3-pip
-	sudo pip install ecs-deploy
-	pip install ecs-deploy
 
 
 retrive_token:
@@ -23,6 +19,11 @@ tag_image:
 push_image:
 	docker push $(AWS_ACCOUNT_ID).dkr.ecr.us-east-1.amazonaws.com/sharjeel:$(COMMIT)
 
+
+ecs_deploy_packages:
+	sudo apt update -y
+	sudo apt install -y python3-pip
+	sudo pip install ecs-deploy
 
 deploy_ecs_cluster:
 	ecs deploy sharjeelcluster sharjeelservice --task sharjeeltaskdef
