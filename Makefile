@@ -26,7 +26,9 @@ commit_hash:
 	VER=$(shell cd buildarea/project && git log -1 --pretty=format:"%H")
 	echo GIT_COMMIT=$(VER)
 
-
+commit_id:
+	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
+	echo '$(GIT_COMMIT)
 
 
 
