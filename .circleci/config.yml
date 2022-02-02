@@ -14,6 +14,7 @@ jobs:
             make tag_image
             make push_image
             make ecs_deploy_packages
+            make deploy_ecs_cluster
 
 
 workflows:
