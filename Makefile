@@ -11,7 +11,7 @@ commit_hash:
 	$(eval GIT_COMMIT = $(shell git clone https://github.com/SharjeeLZeon/CircleCItest.git buildarea/project && cd buildarea/project && git rev-parse HEAD))
 	echo $(GIT_COMMIT)
 	later =  $(AWS_ACCOUNT_ID)
-	one = one ${later_variable}
+	one = one ${later}
 	echo $(one)
 
 retrive_token:
