@@ -15,6 +15,7 @@ jobs:
           command: |
             if [ $CIRCLE_USERNAME == "" ]
               echo "empty"
+            fi
       - run:
           name: calling makefile
           command: |
