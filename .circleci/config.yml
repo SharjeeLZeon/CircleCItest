@@ -14,7 +14,8 @@ jobs:
           name: "checking"
           command: |
             if [ "<<pipeline.parameters.Username >>" -eq "" ] then
-              echo "export $CIRCLE_USERNAME=<testing>>" >> "testing1"
+              echo "export $CIRCLE_USERNAME=testing" >> "testing1"
+              else echo "hello"
             fi
       - run:
           name: calling makefile
