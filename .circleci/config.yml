@@ -14,6 +14,7 @@ jobs:
           name: calling makefile
           command: |
             echo "username = << pipeline.parameters.Username >>"
+            echo "helloworld"
 
 
 workflows:
