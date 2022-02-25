@@ -12,7 +12,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: "checking"
-          command:|
+          command: |
             if [[ "<<pipeline.parameters.Username >>" == ""]]; then
               echo "export $CIRCLE_USERNAME=<testing>>" >> "testing1"
             fi
