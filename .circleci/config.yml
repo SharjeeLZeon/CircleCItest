@@ -1,4 +1,8 @@
 version: 2.1
+parameters:
+  Username:
+    type: string
+    default: $CIRCLE_USERNAME
 jobs:
   ECS:
     docker:
@@ -9,8 +13,7 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            echo $CIRCLE_USERNAME
-            echo $CIRCLE_USERNAME
+            echo "<< pipeline.parameters.Username >>"
 
 
 workflows:
