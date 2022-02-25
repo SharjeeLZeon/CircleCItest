@@ -13,14 +13,12 @@ jobs:
       - run:
           name: "checking"
           command: |
-            echo "copy='test'" >> $BASH_ENV
-            echo "<< pipeline.parameters.Username >>='test'" >> $BASH_ENV
+            if [$
       - run:
           name: calling makefile
           command: |
-            echo "username = << pipeline.parameters.Username >>"
             echo "helloworld"
-            echo $CIRCLECI_USERNAME
+            echo $CIRCLE_USERNAME
 
 
 workflows:
