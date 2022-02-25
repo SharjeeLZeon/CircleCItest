@@ -2,7 +2,7 @@ version: 2.1
 parameters:
   Username:
     type: string
-    default: $CIRCLE_USERNAME
+    default: username
 jobs:
   ECS:
     docker:
@@ -13,8 +13,8 @@ jobs:
       - run:
           name: "checking"
           command: |
-            if [ "<<pipeline.parameters.Username >>" -eq "" ] then
-              echo "export $CIRCLE_USERNAME=testing" >> "testing1"
+            if [ $CIRCLECI_USERNAME -eq "" ] then
+              echo "export << pipeline.parameters.Username >>=testing" >> "testing1"
               else echo "hello"
             fi
       - run:
