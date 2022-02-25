@@ -13,7 +13,7 @@ jobs:
       - run:
           name: calling makefile
           command: |
-            echo "<< pipeline.parameters.Username >>"
+            echo "username = << pipeline.parameters.Username >>"
 
 
 workflows:
