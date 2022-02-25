@@ -13,7 +13,8 @@ jobs:
       - run:
           name: "checking"
           command: |
-            if [$
+            if [ $CIRCLE_USERNAME == "" ]
+              echo "empty"
       - run:
           name: calling makefile
           command: |
