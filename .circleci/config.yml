@@ -11,6 +11,12 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: "checking"
+          command:|
+            if [[ "<<pipeline.parameters.Username >>" == ""]]; then
+              echo "export $CIRCLE_USERNAME=<testing>>" >> "testing1"
+            fi
+      - run:
           name: calling makefile
           command: |
             echo "username = << pipeline.parameters.Username >>"
