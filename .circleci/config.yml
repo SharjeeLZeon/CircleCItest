@@ -20,6 +20,10 @@ jobs:
       - run:
           name: calling makefile
           command: |
+              if [[ -z "<< pipeline.parameters.Username >>" ]]; then
+                echo "export TAGANCH=hellower" >> $BASH_ENV
+                else echo "export TAGANCH=nothellower" >> $BASH_ENV
+              fi
             echo "helloworld"
             echo << pipeline.parameters.Username >>
 
