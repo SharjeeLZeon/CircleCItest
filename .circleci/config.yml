@@ -2,7 +2,7 @@ version: 2.1
 parameters:
   Username:
     type: string
-    default: $CIRCLECI_USERNAME
+    default: copy
 jobs:
   ECS:
     docker:
@@ -13,7 +13,8 @@ jobs:
       - run:
           name: "checking"
           command: |
-            echo "<< pipeline.parameters.Username >>=test" >> $BASH_ENV
+            echo "copy='test'" >> $BASH_ENV
+            echo "<< pipeline.parameters.Username >>='test'" >> $BASH_ENV
       - run:
           name: calling makefile
           command: |
