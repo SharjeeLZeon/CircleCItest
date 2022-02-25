@@ -13,9 +13,7 @@ jobs:
       - run:
           name: "checking"
           command: |
-            if [ << pipeline.parameters.Username >> -eq "" ]; then
-               << pipeline.parameters.Username >>="testing"
-            fi
+            echo "<< pipeline.parameters.Username >>=test" >> $BASH_ENV
       - run:
           name: calling makefile
           command: |
