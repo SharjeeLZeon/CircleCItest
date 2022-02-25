@@ -14,7 +14,7 @@ jobs:
           name: "checking"
           command: |
             if [ << pipeline.parameters.Username >> -eq "" ]; then
-                echo "export << pipeline.parameters.Username >>=testing"
+               << pipeline.parameters.Username >>="testing"
             fi
       - run:
           name: calling makefile
